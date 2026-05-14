@@ -38,7 +38,7 @@ document.getElementById('seletorArquivo').addEventListener('change', async(e) =>
                 elementoExibidor.classList.remove('hidden');
             };
 
-            elementoExibidor.href = code.data;
+            elementoExibidor.href = `https:\\${code.data}`;
             elementoExibidor.textContent = code.data
 
             elFileName.textContent = `Arquivo carregado: ${file.name}`;
