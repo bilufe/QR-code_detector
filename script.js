@@ -38,8 +38,14 @@ document.getElementById('seletorArquivo').addEventListener('change', async(e) =>
                 elementoExibidor.classList.remove('hidden');
             };
 
-            elementoExibidor.href = `https://${code.data}`;
-            elementoExibidor.textContent = code.data
+            let url = code.data;
+
+            if(!url.startsWith("http://") && !url.startsWith("https://")){
+                url = "https://" + url;
+            }
+
+            elementoExibidor.href = url;
+            elementoExibidor.textContent = "Link encontrado, clique aqui";
 
             elFileName.textContent = `Arquivo carregado: ${file.name}`;
 
