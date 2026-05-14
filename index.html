@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de QR-Code em PDF</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"
+        integrity="sha512-Z8CqofpIcnJN80feS2uccz+pXWgZzeKxDsDNMD/dJ6997/LSRY+W4NmEt9acwR+Gt9OHN0kkI1CTianCwoqcjQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Detector de QR-Code em Arquivos PDF</h1>
+    </header>
+
+    <main>
+        <form>
+            <label for="seletorArquivo">Escolha o arquivo PDF que contém o QR-Code para leitura:</label>
+            <br>
+            <input type="file" id="seletorArquivo" accept="application/pdf" required>
+        </form>
+        <p><a id="elementoExibidor" class="hidden botao" target="_blank">Aqui será exibido o link</a></p>
+        <p id="fileName"></p>
+    </main>
+
+    <footer><small>Desenvolvido por Rodrigo Zimmermann - 2026</small></footer>
+
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc =
+            'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.min.js';
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
