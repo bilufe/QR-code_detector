@@ -1,0 +1,1 @@
+Nesta aplicação, o usuário carrega um PDF com um QRCode embarcado e então será feita a leitura do documento em busca do QRCode, o programa retorna o endereço do QRCode para ser acessado sem a necessidade de uso de um smartphone.
