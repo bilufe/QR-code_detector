@@ -38,10 +38,10 @@ async function processPdfFile(file) {
     const code = jsQR(imageData.data, imageData.width, imageData.height);
     if (code) {
       const url = code.data;
-      if (url.startsWith("http:\\")) {
+      if (url.startsWith("http://")) {
         elementoExibidor.href = url;
       } else {
-        elementoExibidor.href = `https:\\${url}`;
+        elementoExibidor.href = `https://${url}`;
       }
       elementoExibidor.textContent = url;
       elFileName.textContent = `Arquivo carregado: ${file.name}`;
