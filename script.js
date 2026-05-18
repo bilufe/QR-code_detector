@@ -9,7 +9,7 @@ async function processPdfFile(file) {
   elementoExibidor.textContent = "....";
 
   const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
-  if(!pdf){
+  if (!pdf) {
     console.error("Erro ao carregar o PDF: ", file.name);
     alert("Erro ao carregar o PDF: " + file.name);
     return;
@@ -38,7 +38,7 @@ async function processPdfFile(file) {
     const code = jsQR(imageData.data, imageData.width, imageData.height);
     if (code) {
       const url = code.data;
-      if (url.startsWith("http://")) {
+      if (url.startsWith("http://") || url.startsWith("https://")) {
         elementoExibidor.href = url;
       } else {
         elementoExibidor.href = `https://${url}`;
